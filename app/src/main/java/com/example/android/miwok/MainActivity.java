@@ -15,12 +15,15 @@
  */
 package com.example.android.miwok;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,13 +53,38 @@ public class MainActivity extends AppCompatActivity {
         // Find the View that has the Colors Activity
         TextView colors = (TextView) findViewById(R.id.colors);
 
-        //Set a click listener on colors Textview
+        //Set a click listener on colors TextView
         colors.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 //new intent opens the {@link ColorsActivity}
                 Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
                 startActivity(colorsIntent);
+            }
+        });
+
+        // Find the view that has the Family activity
+        TextView family = (TextView) findViewById(R.id.family);
+
+        //set a click listener on family
+        family.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // make an intent to open the {@link FamilyActivity}
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                startActivity(familyIntent);
+            }
+        });
+
+        //Find the view for the Phrases activity
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+        //Set Click listener on phrases view
+        phrases.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //make intent to open the {@link PhrasesActivity}
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
             }
         });
     }
